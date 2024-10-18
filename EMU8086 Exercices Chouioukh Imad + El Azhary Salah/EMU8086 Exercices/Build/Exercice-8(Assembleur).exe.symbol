@@ -1,0 +1,16 @@
+< THE SYMBOL TABLE >  Exercice-8(Assembleur).exe  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+DATA                     	00000     	-5        	SEGMENT   	(ITSELF)  
+ARRAY                    	00000     	1         	VAR       	DATA      
+MINVALUE                 	00014     	1         	VAR       	DATA      
+CODE                     	00002     	-5        	SEGMENT   	(ITSELF)  
+START                    	00000     	-1        	LABEL     	CODE      
+FINDMINLOOP              	0000D     	-1        	LABEL     	CODE      
+UPDATEMIN                	00016     	-1        	LABEL     	CODE      
+DONE                     	00018     	-1        	LABEL     	CODE      
+===================================================================================================
+[ 18/10/2024  --  09:45:25 ] 
+< END >
+ 

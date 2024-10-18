@@ -1,0 +1,15 @@
+< THE SYMBOL TABLE >  Exercice-4(Assembleur).exe  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+DATA                     	00000     	-5        	SEGMENT   	(ITSELF)  
+VECTOR1                  	00000     	1         	VAR       	DATA      
+VECTOR2                  	0000A     	1         	VAR       	DATA      
+RESULT                   	00014     	2         	VAR       	DATA      
+CODE                     	00003     	-5        	SEGMENT   	(ITSELF)  
+START                    	00000     	-1        	LABEL     	CODE      
+ADDLOOP                  	00011     	-1        	LABEL     	CODE      
+===================================================================================================
+[ 18/10/2024  --  09:35:38 ] 
+< END >
+ 

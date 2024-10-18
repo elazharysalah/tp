@@ -1,0 +1,94 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+Exercice_2(Assembleur).exe -- emu8086 assembler version: 4.08  
+ 
+[ 18/10/2024  --  09:32:06 ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       DATA SEGMENT
+[   2]    0000: 00 00 00 00 00 00 00 00 00 00 00 00   Array DB 20 DUP(0)
+                00 00 00 00 00 00 00 00             
+[   3]    0014: 00                                    Count DB 0
+[   4]        :                                       DATA ENDS
+[   5]        :                                       
+[   6]        :                                       CODE SEGMENT
+[   7]        :                                       ASSUME CS:CODE, DS:DATA
+[   8]        :                                       
+[   9]    0020:                                       START:
+[  10]    0020: B8 00 00                              MOV AX, DATA
+[  11]    0023: 8E D8                                 MOV DS, AX
+[  12]        :                                       
+[  13]    0025: B9 14 00                              MOV CX, 20
+[  14]    0028: BE 00 00                              LEA SI, Array
+[  15]    002B: B2 37                                 MOV DL, 55
+[  16]    002D: 32 DB                                 XOR BL, BL
+[  17]        :                                       
+[  18]    002F:                                       CountLoop:
+[  19]    002F: 8A 04                                 MOV AL, [SI]
+[  20]    0031: 3A C2                                 CMP AL, DL
+[  21]    0033: 74 02                                 JE Increment
+[  22]    0035: EB 02                                 JMP NextElement
+[  23]        :                                       
+[  24]    0037:                                       Increment:
+[  25]    0037: FE C3                                 INC BL
+[  26]        :                                       
+[  27]    0039:                                       NextElement:
+[  28]    0039: 46                                    INC SI
+[  29]    003A: E2 F3                                 LOOP CountLoop
+[  30]        :                                       
+[  31]    003C: 88 1E 14 00                           MOV Count, BL
+[  32]        :                                       
+[  33]    0040: B4 4C                                 MOV AH, 4CH
+[  34]    0042: CD 21                                 INT 21H
+[  35]        :                                       CODE ENDS
+[  36]        :                                       END START
+[  37]        :                                       
+[  38]        :                                       
+ 
+===================================================================================================
+ 
+EXE HEADER - bytes from 0000 to 01FF inclusive.
+
+0000: 4D      -   exe signature (M)
+0001: 5A      -   exe signature (Z)
+0002: 44      -   bytes on last page (l.byte)
+0003: 00      -   bytes on last page (h.byte)
+0004: 02      -   512 byte pages in file (l.byte)
+0005: 00      -   512 byte pages in file (h.byte)
+0006: 01      -   relocations (l.byte)
+0007: 00      -   relocations (h.byte)
+0008: 20      -   paragraphs in header (l.byte)
+0009: 00      -   paragraphs in header (h.byte)
+000A: 00      -   minimum memory (l.byte)
+000B: 00      -   minimum memory (h.byte)
+000C: FF      -   maximum memory (l.byte)
+000D: FF      -   maximum memory (h.byte)
+000E: 00      -   SS - stack segment (l.byte)
+000F: 00      -   SS - stack segment (h.byte)
+0010: 00      -   SP - stack pointer (l.byte)
+0011: 00      -   SP - stack pointer (h.byte)
+0012: 28      -   check sum (l.byte)
+0013: 8D      -   check sum (h.byte)
+0014: 00      -   IP - instruction pointer (l.byte)
+0015: 00      -   IP - instruction pointer (h.byte)
+0016: 02      -   CS - code segment (l.byte)
+0017: 00      -   CS - code segment (h.byte)
+0018: 1E      -   relocation table adress (l.byte)
+0019: 00      -   relocation table adress (h.byte)
+001A: 00      -   overlay number (l.byte)
+001B: 00      -   overlay number (h.byte)
+001C: 01      -   signature (l.byte)
+001D: 00      -   signature (h.byte)
+001E: 01      -   relocation table - offset inside segment (l.byte)
+001F: 00      -   relocation table - offset inside segment (h.byte)
+0020: 02      -   relocation table - segment anchor (l.byte)
+0021: 00      -   relocation table - segment anchor (h.byte)
+0022 to 01FF  -   reserved relocation area  (00) 
+
+
+
+
+===================================================================================================

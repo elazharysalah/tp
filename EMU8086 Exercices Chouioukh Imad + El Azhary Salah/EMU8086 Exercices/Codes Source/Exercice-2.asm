@@ -1,0 +1,36 @@
+DATA SEGMENT
+    Array DB 20 DUP(0)  
+    Count DB 0          
+DATA ENDS
+
+CODE SEGMENT
+    ASSUME CS:CODE, DS:DATA
+
+START:
+    MOV AX, DATA        
+    MOV DS, AX         
+
+    MOV CX, 20          
+    LEA SI, Array      
+    MOV DL, 55         
+    XOR BL, BL         
+
+CountLoop:
+    MOV AL, [SI]       
+    CMP AL, DL        
+    JE Increment        
+    JMP NextElement     
+
+Increment:
+    INC BL             
+
+NextElement:
+    INC SI              
+    LOOP CountLoop     
+
+    MOV Count, BL      
+
+    MOV AH, 4CH         
+    INT 21H             
+CODE ENDS
+END START
